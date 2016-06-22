@@ -1,0 +1,142 @@
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.9621403217315674
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.693099021911621
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+2.1162216663360596
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+2.266108751296997
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.7608230113983154
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.6975417137145996
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.7204201221466064
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.6800246238708496
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.7195582389831543
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.8462202548980713
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.715017318725586
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.725672721862793
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.7184748649597168
+raj@raj-Inspiron-5558:~/OffloadingClient$ python Main.py 
+Hello.c                                       100% 5819     5.7KB/s   00:00    
+ScriptServer.sh                               100%  117     0.1KB/s   00:00    
+Hello.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+Hello.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+1.708871603012085
+raj@raj-Inspiron-5558:~/OffloadingClient$ 
+
