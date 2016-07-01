@@ -1,0 +1,4 @@
+cd ~/Softwares/dlib-18.18/examples
+g++ -O3 -I.. ../dlib/all/source.cpp -lpthread -lX11 -ljpeg -DDLIB_JPEG_SUPPORT -0 videoTrack.out video_tracking_ex.cpp
+./videoTrack.out
+rm videoTrack.out

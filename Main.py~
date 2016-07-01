@@ -7,6 +7,7 @@ import time
 
 script = str(sys.argv[1])
 outputString = str(sys.argv[1])[:-3]
+param = str(sys.argv[2])
 
 executionTimeList = []
 cpuTimeList = []
@@ -14,12 +15,11 @@ executionTimeStatistics = []
 cpuTimeStatistics = []
 
 command1 = '/usr/bin/time -a  -o'
-command2 = ' tmp' + outputString + '.csv'
+command2 = ' tmp' + outputString + param + '.csv'
 command3 = ' -f "%S", '
 command4 = ' ./' + script
 command =  command1 + command2 + command3 + command4
 print(command)
-
 
 for index in range(0, 10):
 #{
@@ -35,10 +35,11 @@ for index in range(0, 10):
     cpuTime = cpuEnd - cpuStart
     
     executionTimeList.append(executionTime)
-    cpuTimeList.append(cpuTime)  
+    cpuTimeList.append(cpuTime)
+    time.sleep(10)  
 #}
 
-tmpFile = open('tmp' + outputString + '.csv')
+tmpFile = open('tmp' + outputString + param + '.csv')
 scriptExecution = csv.reader(tmpFile)
 cpuScriptTime = []
 for row in scriptExecution :
@@ -74,19 +75,19 @@ print(TotalCpuTime)
 print(executionTimeStatistics)
 print(cpuTimeStatistics)
 
-f = open(outputString + "ExecutionTime", "w")
+f = open(outputString + "ExecutionTime" + param, "w")
 f.write("\n".join(map(lambda x: str(x), executionTimeList)))
 f.close
 
-f = open(outputString + "CpuTime", "w")
+f = open(outputString + "CpuTime" + param, "w")
 f.write("\n".join(map(lambda x: str(x), TotalCpuTime)))
 f.close
 
-f = open(outputString + "ExecutionTimeStatistics", "w")
+f = open(outputString + "ExecutionTimeStatistics" + param, "w")
 f.write("\n".join(map(lambda x: str(x), executionTimeStatistics)))
 f.close
 
-f = open(outputString + "CpuTimeStatistics", "w")
+f = open(outputString + "CpuTimeStatistics" + param, "w")
 f.write("\n".join(map(lambda x: str(x), cpuTimeStatistics)))
 f.close
 

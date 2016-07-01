@@ -1,8 +1,8 @@
-scp Hello.c rshukla@10.42.43.1:/home/rshukla/OffloadedJobs
-scp ScriptServer.sh rshukla@10.42.43.1:/home/rshukla/OffloadedJobs
+scp ~/Softwares/dlib-18.18/examples/ rshukla@134.197.41.208:/home/rshukla/Softwares/dlib-18.18/examples
+scp CostAssignment.sh rshukla@134.197.41.208:/home/rshukla/OffloadedJobs
 
-ssh  rshukla@10.42.43.1 "cd OffloadedJobs && chmod +x ScriptServer.sh && ./ScriptServer.sh"
+ssh  rshukla@134.197.41.208 "cd OffloadedJobs && chmod +x CostAssignment.sh && ./CostAssignment.sh"
 
-scp rshukla@10.42.43.1:/home/rshukla/OffloadedJobs/outFile ~/ClientServerCode
+scp rshukla@134.197.41.208:/home/rshukla/OffloadedJobs/outFileBoltzman ~/ClientServerCode
 
 

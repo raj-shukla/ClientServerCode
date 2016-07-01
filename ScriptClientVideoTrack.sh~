@@ -1,0 +1,9 @@
+scp ~/Softwares/dlib-18.18/examples/video_tracking_ex.cpp
+scp video_frames.zip rshukla@134.197.41.208:/home/rshukla/Softwares/dlib-18.18/examples
+scp VideoTrack.sh rshukla@134.197.41.208:/home/rshukla/OffloadedJobs
+
+ssh  rshukla@134.197.41.208 "cd OffloadedJobs && chmod +x VideoTrack.sh && ./VideoTrack.sh"
+
+scp rshukla@134.197.41.208:/home/rshukla/Softwares/dlib-18.18/examples/outFileVideoTrack ~/ClientServerCode
+
+

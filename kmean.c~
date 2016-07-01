@@ -1,332 +1,183 @@
-// Implementation of the KMeans Algorithm
-// reference: http://mnemstudio.org/clustering-k-means-example-1.htm
-
-#include <vector>
-#include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <algorithm>
+#include <math.h>
 
-using namespace std;
+typedef struct { double x, y; int group; } point_t, *point;
 
-class Point
+double randf(double m)
 {
-private:
-	int id_point, id_cluster;
-	vector<double> values;
-	int total_values;
-	string name;
+	return m * rand() / (RAND_MAX - 1.);
+}
 
-public:
-	Point(int id_point, vector<double>& values, string name = "")
-	{
-		this->id_point = id_point;
-		total_values = values.size();
-
-		for(int i = 0; i < total_values; i++)
-			this->values.push_back(values[i]);
-
-		this->name = name;
-		id_cluster = -1;
-	}
-
-	int getID()
-	{
-		return id_point;
-	}
-
-	void setCluster(int id_cluster)
-	{
-		this->id_cluster = id_cluster;
-	}
-
-	int getCluster()
-	{
-		return id_cluster;
-	}
-
-	double getValue(int index)
-	{
-		return values[index];
-	}
-
-	int getTotalValues()
-	{
-		return total_values;
-	}
-
-	void addValue(double value)
-	{
-		values.push_back(value);
-	}
-
-	string getName()
-	{
-		return name;
-	}
-};
-
-class Cluster
+point gen_xy(int count, double radius)
 {
-private:
-	int id_cluster;
-	vector<double> central_values;
-	vector<Point> points;
+	double ang, r;
+	point p, pt = malloc(sizeof(point_t) * count);
 
-public:
-	Cluster(int id_cluster, Point point)
-	{
-		this->id_cluster = id_cluster;
-
-		int total_values = point.getTotalValues();
-
-		for(int i = 0; i < total_values; i++)
-			central_values.push_back(point.getValue(i));
-
-		points.push_back(point);
+	/* note: this is not a uniform 2-d distribution */
+	for (p = pt + count; p-- > pt;) {
+		ang = randf(2 * M_PI);
+		r = randf(radius);
+		p->x = r * cos(ang);
+		p->y = r * sin(ang);
 	}
 
-	void addPoint(Point point)
-	{
-		points.push_back(point);
-	}
+	return pt;
+}
 
-	bool removePoint(int id_point)
-	{
-		int total_points = points.size();
-
-		for(int i = 0; i < total_points; i++)
-		{
-			if(points[i].getID() == id_point)
-			{
-				points.erase(points.begin() + i);
-				return true;
-			}
-		}
-		return false;
-	}
-
-	double getCentralValue(int index)
-	{
-		return central_values[index];
-	}
-
-	void setCentralValue(int index, double value)
-	{
-		central_values[index] = value;
-	}
-
-	Point getPoint(int index)
-	{
-		return points[index];
-	}
-
-	int getTotalPoints()
-	{
-		return points.size();
-	}
-
-	int getID()
-	{
-		return id_cluster;
-	}
-};
-
-class KMeans
+double dist2(point a, point b)
 {
-private:
-	int K; // number of clusters
-	int total_values, total_points, max_iterations;
-	vector<Cluster> clusters;
+	double x = a->x - b->x, y = a->y - b->y;
+	return x*x + y*y;
+}
 
-	// return ID of nearest center (uses euclidean distance)
-	int getIDNearestCenter(Point point)
-	{
-		double sum = 0.0, min_dist;
-		int id_cluster_center = 0;
-
-		for(int i = 0; i < total_values; i++)
-		{
-			sum += pow(clusters[0].getCentralValue(i) -
-					   point.getValue(i), 2.0);
-		}
-
-		min_dist = sqrt(sum);
-
-		for(int i = 1; i < K; i++)
-		{
-			double dist;
-			sum = 0.0;
-
-			for(int j = 0; j < total_values; j++)
-			{
-				sum += pow(clusters[i].getCentralValue(j) -
-						   point.getValue(j), 2.0);
-			}
-
-			dist = sqrt(sum);
-
-			if(dist < min_dist)
-			{
-				min_dist = dist;
-				id_cluster_center = i;
-			}
-		}
-
-		return id_cluster_center;
-	}
-
-public:
-	KMeans(int K, int total_points, int total_values, int max_iterations)
-	{
-		this->K = K;
-		this->total_points = total_points;
-		this->total_values = total_values;
-		this->max_iterations = max_iterations;
-	}
-
-	void run(vector<Point> & points)
-	{
-		if(K > total_points)
-			return;
-
-		vector<int> prohibited_indexes;
-
-		// choose K distinct values for the centers of the clusters
-		for(int i = 0; i < K; i++)
-		{
-			while(true)
-			{
-				int index_point = rand() % total_points;
-
-				if(find(prohibited_indexes.begin(), prohibited_indexes.end(),
-						index_point) == prohibited_indexes.end())
-				{
-					prohibited_indexes.push_back(index_point);
-					points[index_point].setCluster(i);
-					Cluster cluster(i, points[index_point]);
-					clusters.push_back(cluster);
-					break;
-				}
-			}
-		}
-
-		int iter = 1;
-
-		while(true)
-		{
-			bool done = true;
-
-			// associates each point to the nearest center
-			for(int i = 0; i < total_points; i++)
-			{
-				int id_old_cluster = points[i].getCluster();
-				int id_nearest_center = getIDNearestCenter(points[i]);
-
-				if(id_old_cluster != id_nearest_center)
-				{
-					if(id_old_cluster != -1)
-						clusters[id_old_cluster].removePoint(points[i].getID());
-
-					points[i].setCluster(id_nearest_center);
-					clusters[id_nearest_center].addPoint(points[i]);
-					done = false;
-				}
-			}
-
-			// recalculating the center of each cluster
-			for(int i = 0; i < K; i++)
-			{
-				for(int j = 0; j < total_values; j++)
-				{
-					int total_points_cluster = clusters[i].getTotalPoints();
-					double sum = 0.0;
-
-					if(total_points_cluster > 0)
-					{
-						for(int p = 0; p < total_points_cluster; p++)
-							sum += clusters[i].getPoint(p).getValue(j);
-						clusters[i].setCentralValue(j, sum / total_points_cluster);
-					}
-				}
-			}
-
-			if(done == true || iter >= max_iterations)
-			{
-				cout << "Break in iteration " << iter << "\n\n";
-				break;
-			}
-
-			iter++;
-		}
-
-		// shows elements of clusters
-		for(int i = 0; i < K; i++)
-		{
-			int total_points_cluster =  clusters[i].getTotalPoints();
-
-			cout << "Cluster " << clusters[i].getID() + 1 << endl;
-			for(int j = 0; j < total_points_cluster; j++)
-			{
-				cout << "Point " << clusters[i].getPoint(j).getID() + 1 << ": ";
-				for(int p = 0; p < total_values; p++)
-					cout << clusters[i].getPoint(j).getValue(p) << " ";
-
-				string point_name = clusters[i].getPoint(j).getName();
-
-				if(point_name != "")
-					cout << "- " << point_name;
-
-				cout << endl;
-			}
-
-			cout << "Cluster values: ";
-
-			for(int j = 0; j < total_values; j++)
-				cout << clusters[i].getCentralValue(j) << " ";
-
-			cout << "\n\n";
-		}
-	}
-};
-
-int main(int argc, char *argv[])
+int
+nearest(point pt, point cent, int n_cluster, double *d2)
 {
-	srand (time(NULL));
+	int i, min_i;
+	point c;
+	double d, min_d;
 
-	int total_points, total_values, K, max_iterations, has_name;
-
-	cin >> total_points >> total_values >> K >> max_iterations >> has_name;
-
-	vector<Point> points;
-	string point_name;
-
-	for(int i = 0; i < total_points; i++)
-	{
-		vector<double> values;
-
-		for(int j = 0; j < total_values; j++)
-		{
-			double value;
-			cin >> value;
-			values.push_back(value);
-		}
-
-		if(has_name)
-		{
-			cin >> point_name;
-			Point p(i, values, point_name);
-			points.push_back(p);
-		}
-		else
-		{
-			Point p(i, values);
-			points.push_back(p);
+#	define for_n for (c = cent, i = 0; i < n_cluster; i++, c++)
+	for_n {
+		min_d = HUGE_VAL;
+		min_i = pt->group;
+		for_n {
+			if (min_d > (d = dist2(c, pt))) {
+				min_d = d; min_i = i;
+			}
 		}
 	}
+	if (d2) *d2 = min_d;
+	return min_i;
+}
 
-	KMeans kmeans(K, total_points, total_values, max_iterations);
-	kmeans.run(points);
+void kpp(point pts, int len, point cent, int n_cent)
+{
+#	define for_len for (j = 0, p = pts; j < len; j++, p++)
+	int i, j;
+	int n_cluster;
+	double sum, *d = malloc(sizeof(double) * len);
 
+	point p, c;
+	cent[0] = pts[ rand() % len ];
+	for (n_cluster = 1; n_cluster < n_cent; n_cluster++) {
+		sum = 0;
+		for_len {
+			nearest(p, cent, n_cluster, d + j);
+			sum += d[j];
+		}
+		sum = randf(sum);
+		for_len {
+			if ((sum -= d[j]) > 0) continue;
+			cent[n_cluster] = pts[j];
+			break;
+		}
+	}
+	for_len p->group = nearest(p, cent, n_cluster, 0);
+	free(d);
+}
+
+point lloyd(point pts, int len, int n_cluster)
+{
+	int i, j, min_i;
+	int changed;
+
+	point cent = malloc(sizeof(point_t) * n_cluster), p, c;
+
+	/* assign init grouping randomly */
+	//for_len p->group = j % n_cluster;
+
+	/* or call k++ init */
+	kpp(pts, len, cent, n_cluster);
+
+	do {
+		/* group element for centroids are used as counters */
+		for_n { c->group = 0; c->x = c->y = 0; }
+		for_len {
+			c = cent + p->group;
+			c->group++;
+			c->x += p->x; c->y += p->y;
+		}
+		for_n { c->x /= c->group; c->y /= c->group; }
+
+		changed = 0;
+		/* find closest centroid of each point */
+		for_len {
+			min_i = nearest(p, cent, n_cluster, 0);
+			if (min_i != p->group) {
+				changed++;
+				p->group = min_i;
+			}
+		}
+	} while (changed > (len >> 10)); /* stop when 99.9% of points are good */
+
+	for_n { c->group = i; }
+
+	return cent;
+}
+
+void print_eps(point pts, int len, point cent, int n_cluster)
+{
+#	define W 400
+#	define H 400
+	int i, j;
+	point p, c;
+	double min_x, max_x, min_y, max_y, scale, cx, cy;
+	double *colors = malloc(sizeof(double) * n_cluster * 3);
+
+	for_n {
+		colors[3*i + 0] = (3 * (i + 1) % 11)/11.;
+		colors[3*i + 1] = (7 * i % 11)/11.;
+		colors[3*i + 2] = (9 * i % 11)/11.;
+	}
+
+	max_x = max_y = -(min_x = min_y = HUGE_VAL);
+	for_len {
+		if (max_x < p->x) max_x = p->x;
+		if (min_x > p->x) min_x = p->x;
+		if (max_y < p->y) max_y = p->y;
+		if (min_y > p->y) min_y = p->y;
+	}
+	scale = W / (max_x - min_x);
+	if (scale > H / (max_y - min_y)) scale = H / (max_y - min_y);
+	cx = (max_x + min_x) / 2;
+	cy = (max_y + min_y) / 2;
+
+	printf("%%!PS-Adobe-3.0\n%%%%BoundingBox: -5 -5 %d %d\n", W + 10, H + 10);
+	printf( "/l {rlineto} def /m {rmoveto} def\n"
+		"/c { .25 sub exch .25 sub exch .5 0 360 arc fill } def\n"
+		"/s { moveto -2 0 m 2 2 l 2 -2 l -2 -2 l closepath "
+		"	gsave 1 setgray fill grestore gsave 3 setlinewidth"
+		" 1 setgray stroke grestore 0 setgray stroke }def\n"
+	);
+	for_n {
+		printf("%g %g %g setrgbcolor\n",
+			colors[3*i], colors[3*i + 1], colors[3*i + 2]);
+		for_len {
+			if (p->group != i) continue;
+			printf("%.3f %.3f c\n",
+				(p->x - cx) * scale + W / 2,
+				(p->y - cy) * scale + H / 2);
+		}
+		printf("\n0 setgray %g %g s\n",
+			(c->x - cx) * scale + W / 2,
+			(c->y - cy) * scale + H / 2);
+	}
+	printf("\n%%%%EOF");
+	free(colors);
+#	undef for_n
+#	undef for_len
+}
+
+#define PTS 2500000
+#define K 11
+int main()
+{
+	int i;
+	point v = gen_xy(PTS, 10);
+	point c = lloyd(v, PTS, K);
+	print_eps(v, PTS, c, K);
+	// free(v); free(c);
 	return 0;
 }
