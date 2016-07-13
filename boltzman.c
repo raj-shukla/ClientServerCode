@@ -94,7 +94,7 @@ int main()
 //    for(iteration =0; iteration <20; iteration ++)
 		while (T > 0.0001)
     {
-        for(repetition =0; repetition < 5000; repetition++)
+        for(repetition =0; repetition < 250; repetition++)
         {
             locX = rand()%ROWS ;
             locY = rand()%COLUMNS ;
