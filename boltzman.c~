@@ -20,8 +20,8 @@ int main()
     float input[ROWS][COLUMNS] ;
     int state[ROWS][COLUMNS] ;
     float weight[ROWS][COLUMNS][ROWS][COLUMNS] ;
-    float deviceOpTime[ROWS] = {0.5, 2.3, 0.28, 4.5, 9.0} ;
-    float costTimeSlot[COLUMNS] ={92.84, 94.39, 92.2, 91.42, 92.58, 98.41, 96.48, 96.7, 96.91, 99.27, 96.89, 100.46, 97.66, 93.03, 94.05, 97.98, 92.04, 94.95, 96.32, 93.46, 94.77, 95.01, 92.74, 94.27};
+    float deviceOpTime[ROWS] = {0.5, 2.3} ;
+    float costTimeSlot[COLUMNS] ={92.84, 94.39};
     float T = 1 ;
     float energy, E1, E2, deltaE ;
     float  EnergyGlobMinCurr ; 
@@ -94,7 +94,7 @@ int main()
 //    for(iteration =0; iteration <20; iteration ++)
 		while (T > 0.0001)
     {
-        for(repetition =0; repetition < 250; repetition++)
+        for(repetition =0; repetition < 100; repetition++)
         {
             locX = rand()%ROWS ;
             locY = rand()%COLUMNS ;

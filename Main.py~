@@ -16,12 +16,12 @@ cpuTimeStatistics = []
 
 command1 = '/usr/bin/time -a  -o'
 command2 = ' tmp' + outputString + param + '.csv'
-command3 = ' -f "%S", '
+command3 = ' -f "%S","%U"'
 command4 = ' ./' + script
 command =  command1 + command2 + command3 + command4
 print(command)
 
-for index in range(0, 2):
+for index in range(0, 10):
 #{
     start = time.time()
     cpuStart = time.clock()
@@ -36,7 +36,7 @@ for index in range(0, 2):
     
     executionTimeList.append(executionTime)
     cpuTimeList.append(cpuTime)
-    time.sleep(1)  
+    time.sleep(5)  
 #}
 
 tmpFile = open('tmp' + outputString + param + '.csv')
@@ -44,7 +44,7 @@ scriptExecution = csv.reader(tmpFile)
 cpuScriptTime = []
 for row in scriptExecution :
 #{
-    cpuScriptTime.append(float(row[0]))
+    cpuScriptTime.append(float(row[0]) + float(row[1]))
 #}
 
 TotalCpuTime = []

@@ -170,7 +170,7 @@ void print_eps(point pts, int len, point cent, int n_cluster)
 #	undef for_len
 }
 
-#define PTS 2500000
+#define PTS 1100000
 #define K 11
 int main()
 {
