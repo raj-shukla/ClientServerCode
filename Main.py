@@ -16,7 +16,7 @@ cpuTimeStatistics = []
 
 command1 = '/usr/bin/time -a  -o'
 command2 = ' tmp' + outputString + param + '.csv'
-command3 = ' -f "%S","%U"'
+command3 = ' -f "%S","%U",%P,%F,%R'
 command4 = ' ./' + script
 command =  command1 + command2 + command3 + command4
 print(command)
