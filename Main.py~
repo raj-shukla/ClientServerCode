@@ -36,7 +36,7 @@ for index in range(0, 10):
     
     executionTimeList.append(executionTime)
     cpuTimeList.append(cpuTime)
-    time.sleep(5)  
+    time.sleep(15)  
 #}
 
 tmpFile = open('tmp' + outputString + param + '.csv')

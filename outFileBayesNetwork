@@ -1,0 +1,29 @@
+Using the join tree algorithm:
+p(A=1) = 0.019386
+p(A=0) = 0.980614
+p(B=1) = 0.01
+p(B=0) = 0.99
+p(C=1) = 0.001
+p(C=0) = 0.999
+p(D=1) = 0.205816
+p(D=0) = 0.794184
+
+
+
+Using the join tree algorithm:
+p(A=1 | C=1) = 0.5049
+p(A=0 | C=1) = 0.4951
+p(B=1 | C=1) = 0.01
+p(B=0 | C=1) = 0.99
+p(C=1 | C=1) = 1
+p(C=0 | C=1) = 0
+p(D=1 | C=1) = 0.35147
+p(D=0 | C=1) = 0.64853
+
+
+
+Using the approximate Gibbs Sampler algorithm:
+p(A=1 | C=1) = 0.5055
+p(B=1 | C=1) = 0.0065
+p(C=1 | C=1) = 1
+p(D=1 | C=1) = 0.341
