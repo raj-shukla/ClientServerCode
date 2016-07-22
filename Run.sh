@@ -4,7 +4,6 @@ python3 Main.py ScriptClientBayesNetwork.sh Serverondemand
 echo complete
 python3 Main.py ScriptClientCostAssignment.sh Serverondemand
 echo Complete
-#python3 Main.py ScriptClientFaceDetector.sh Serverondemand
 echo Complete
 python3 Main.py ScriptClientFileSearch.sh Serverondemand
 echo Complete

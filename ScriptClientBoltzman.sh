@@ -1,8 +1,8 @@
-scp boltzman.c rshukla@10.42.43.1:/home/rshukla/OffloadedJobs
-scp Boltzman.sh rshukla@10.42.43.1:/home/rshukla/OffloadedJobs
+scp PrintText1.py rshukla@10.42.43.1:/home/rshukla/OffloadedJobs
+scp PrintText.sh rshukla@10.42.43.1:/home/rshukla/OffloadedJobs
 
-ssh  rshukla@10.42.43.1 "cd OffloadedJobs && chmod +x Boltzman.sh && /usr/bin/time -a  -o StatisticsBoltzman.csv -f "%S","%U",%P,%F,%R  ./Boltzman.sh"
+ssh  rshukla@10.42.43.1 "cd OffloadedJobs && chmod +x PrintText.sh && /usr/bin/time -a  -o PrintText.csv -f "%S","%U",%P,%F,%R  ./Boltzman.sh"
 
-scp rshukla@10.42.43.1:/home/rshukla/OffloadedJobs/outFileBoltzman ~/ClientServerCode
+scp rshukla@10.42.43.1:/home/rshukla/OffloadedJobs/outFilePrintText ~/ClientServerCode
 
 
