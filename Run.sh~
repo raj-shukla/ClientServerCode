@@ -1,24 +1,25 @@
-python3 Main.py ScriptClientBoltzman.sh Server3_60GHz
+python3 Main.py ScriptClientBoltzman.sh Serverondemand
 echo Complete
-python3 Main.py ScriptClientBayesNetwork.sh Server3_60GHz
+python3 Main.py ScriptClientBayesNetwork.sh Serverondemand
 echo complete
-python3 Main.py ScriptClientCostAssignment.sh Server3_60GHz
+python3 Main.py ScriptClientCostAssignment.sh Serverondemand
 echo Complete
-#python3 Main.py ScriptClientFaceDetector.sh Server3_60GHz
 echo Complete
-python3 Main.py ScriptClientFileSearch.sh Server3_60GHz
+python3 Main.py ScriptClientFileSearch.sh Serverondemand
 echo Complete
-python3 Main.py ScriptClientKmean.sh Server3_60GHz
+python3 Main.py ScriptClientPrintText.sh Serverondemand
 echo Complete
-python3 Main.py ScriptClientRunningStatistics.sh Server3_60GHz
+python3 Main.py ScriptClientBoltzman.sh Serverondemand
 echo Complete
-python3 Main.py ScriptClientSort.sh Server3_60GHz
+python3 Main.py ScriptClientRunningStatistics.sh Serverondemand
 echo Complete
-python3 Main.py ScriptClientSvmPegasos.sh Server3_60GHz
+python3 Main.py ScriptClientSort.sh Serverondemand
 echo Complete
-python3 Main.py ScriptClientSvmRank.sh Server3_60GHz
+python3 Main.py ScriptClientSvmPegasos.sh Serverondemand
 echo Complete
-#python3 Main.py ScriptClientVideoTrack.sh Server3_60GHz
+python3 Main.py ScriptClientSvmRank.sh Serverondemand
+echo Complete
+#python3 Main.py ScriptClientVideoTrack.sh Serverondemand
 echo Complete
 
 

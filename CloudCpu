@@ -1,0 +1,116 @@
+raj@raj-Inspiron-5558:~$ ssh -i AmazonKey/rajshukla.pem ubuntu@ec2-54-153-12-235.us-west-1.compute.amazonaws.com
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Jul 23 22:01:49 UTC 2016
+
+  System load:  0.13              Processes:           97
+  Usage of /:   16.8% of 7.74GB   Users logged in:     0
+  Memory usage: 7%                IP address for eth0: 172.31.1.164
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+90 packages can be updated.
+53 updates are security updates.
+
+
+Last login: Sat Jul 23 01:44:24 2016 from 134.197.0.19
+ubuntu@ip-172-31-1-164:~$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                1
+On-line CPU(s) list:   0
+Thread(s) per core:    1
+Core(s) per socket:    1
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 63
+Stepping:              2
+CPU MHz:               2400.064
+BogoMIPS:              4800.12
+Hypervisor vendor:     Xen
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              30720K
+NUMA node0 CPU(s):     0
+ubuntu@ip-172-31-1-164:~$ cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 63
+model name	: Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+stepping	: 2
+microcode	: 0x25
+cpu MHz		: 2400.064
+cache size	: 30720 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm xsaveopt fsgsbase bmi1 avx2 smep bmi2 erms invpcid
+bogomips	: 4800.12
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+ubuntu@ip-172-31-1-164:~$ cat /proc/cpuinfo | grep processor | wc -l
+1
+ubuntu@ip-172-31-1-164:~$ sudo lshw -class processor
+  *-cpu:0                 
+       description: CPU
+       product: Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+       vendor: Intel Corp.
+       physical id: 1
+       bus info: cpu@0
+       slot: CPU 1
+       size: 2400MHz
+       capacity: 2400MHz
+       width: 64 bits
+       capabilities: fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp x86-64 constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm xsaveopt fsgsbase bmi1 avx2 smep bmi2 erms invpcid
+  *-cpu:1
+       description: CPU
+       vendor: Intel
+       physical id: 4
+       bus info: cpu@1
+       slot: CPU 1
+       size: 2400MHz
+       capacity: 2400MHz
+ubuntu@ip-172-31-1-164:~$ nproc
+1
+ubuntu@ip-172-31-1-164:~$ sudo dmidecode -t 4
+# dmidecode 2.12
+SMBIOS 2.4 present.
+
+Handle 0x0401, DMI type 4, 26 bytes
+Processor Information
+	Socket Designation: CPU 1
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Intel
+	ID: F2 06 03 00 FF FB 89 17
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2400 MHz
+	Current Speed: 2400 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+

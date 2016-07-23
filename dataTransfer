@@ -1,0 +1,149 @@
+/usr/bin/time -a  -o tmpScriptClientBoltzmandataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientBoltzman.sh
+PrintText1.py                                 100%  101     0.1KB/s   00:00    
+PrintText.sh                                  100%   99     0.1KB/s   00:00    
+boltzman7.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+boltzman7.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+outFilePrintText                              100% 8496KB   4.2MB/s   00:02    
+PrintText1.py                                 100%  101     0.1KB/s   00:00    
+PrintText.sh                                  100%   99     0.1KB/s   00:00    
+boltzman7.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+boltzman7.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+outFilePrintText                              100% 8496KB   2.8MB/s   00:03    
+[9.057825803756714, 9.210795164108276]
+[0.23032699999999998, 0.26043700000000003]
+[9.134310483932495, 9.057825803756714, 9.210795164108276, 9.134310483932495, 0.01169981260318309, 0.10816567201835844]
+[0.245382, 0.23032699999999998, 0.26043700000000003, 0.245382, 0.00045330605000000164, 0.021290985181526986]
+Complete
+/usr/bin/time -a  -o tmpScriptClientBayesNetworkdataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientBayesNetwork.sh
+bayes_net_ex.cpp                              100%   13KB  12.8KB/s   00:00    
+BayesNetwork.sh                               100%  144     0.1KB/s   00:00    
+outFileBayesNetwork                           100%  490     0.5KB/s   00:00    
+bayes_net_ex.cpp                              100%   13KB  12.8KB/s   00:00    
+BayesNetwork.sh                               100%  144     0.1KB/s   00:00    
+outFileBayesNetwork                           100%  491     0.5KB/s   00:00    
+[3.9859139919281006, 4.164275169372559]
+[0.050239, 0.060399999999999995]
+[4.07509458065033, 3.9859139919281006, 4.164275169372559, 4.07509458065033, 0.015906354809686718, 0.12612039807139336]
+[0.055319499999999994, 0.050239, 0.060399999999999995, 0.055319499999999994, 5.162296049999996e-05, 0.007184912003636507]
+complete
+/usr/bin/time -a  -o tmpScriptClientCostAssignmentdataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientCostAssignment.sh
+max_cost_assignment_ex.cpp                    100% 7862     7.7KB/s   00:00    
+CostAssignment.sh                             100%  160     0.2KB/s   00:00    
+outFileCostAssignment                         100%  134     0.1KB/s   00:00    
+max_cost_assignment_ex.cpp                    100% 7862     7.7KB/s   00:00    
+CostAssignment.sh                             100%  160     0.2KB/s   00:00    
+outFileCostAssignment                         100%  134     0.1KB/s   00:00    
+[3.358081817626953, 3.318179130554199]
+[0.050245000000000005, 0.060337]
+[3.338130474090576, 3.318179130554199, 3.358081817626953, 3.338130474090576, 0.0007961122178130609, 0.028215460616709074]
+[0.05529100000000001, 0.050245000000000005, 0.060337, 0.05529100000000001, 5.092423199999997e-05, 0.0071361216357346356]
+Complete
+Complete
+/usr/bin/time -a  -o tmpScriptClientFileSearchdataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientFileSearch.sh
+opencv-3.1.0.zip                              100%   76MB   4.5MB/s   00:17    
+FileSearch.sh                                 100%   91     0.1KB/s   00:00    
+outFileFileSearch                             100%    0     0.0KB/s   00:00    
+opencv-3.1.0.zip                              100%   76MB   5.4MB/s   00:14    
+FileSearch.sh                                 100%   91     0.1KB/s   00:00    
+outFileFileSearch                             100%    0     0.0KB/s   00:00    
+[20.3084397315979, 17.185906648635864]
+[1.090269, 1.1802850000000003]
+[18.747173190116882, 17.185906648635864, 20.3084397315979, 18.747173190116882, 4.875106427096199, 2.207964317441792]
+[1.135277, 1.090269, 1.1802850000000003, 1.135277, 0.004051440128000029, 0.06365092401528849]
+Complete
+/usr/bin/time -a  -o tmpScriptClientPrintTextdataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientPrintText.sh
+PrintText1.py                                 100%  101     0.1KB/s   00:00    
+file.zip                                      100% 9243KB   9.0MB/s   00:01    
+PrintText.sh                                  100%   99     0.1KB/s   00:00    
+outFilePrintText                              100% 8496KB   4.2MB/s   00:02    
+PrintText1.py                                 100%  101     0.1KB/s   00:00    
+file.zip                                      100% 9243KB   9.0MB/s   00:01    
+PrintText.sh                                  100%   99     0.1KB/s   00:00    
+outFilePrintText                              100% 8496KB   4.2MB/s   00:02    
+[5.370124816894531, 4.625003099441528]
+[0.370269, 0.400445]
+[4.99756395816803, 4.625003099441528, 5.370124816894531, 4.99756395816803, 0.27760318691005637, 0.526880619220385]
+[0.385357, 0.370269, 0.400445, 0.385357, 0.0004552954879999994, 0.021337654229085245]
+Complete
+/usr/bin/time -a  -o tmpScriptClientBoltzmandataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientBoltzman.sh
+PrintText1.py                                 100%  101     0.1KB/s   00:00    
+PrintText.sh                                  100%   99     0.1KB/s   00:00    
+boltzman7.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+boltzman7.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+outFilePrintText                              100% 8496KB   2.8MB/s   00:03    
+PrintText1.py                                 100%  101     0.1KB/s   00:00    
+PrintText.sh                                  100%   99     0.1KB/s   00:00    
+boltzman7.c:198:6: warning: conflicting types for ‘SaveState’ [enabled by default]
+ void SaveState(int state[ROWS][COLUMNS])
+      ^
+boltzman7.c:141:25: note: previous implicit declaration of ‘SaveState’ was here
+                         SaveState(state);
+                         ^
+outFilePrintText                              100% 8496KB   2.8MB/s   00:03    
+[9.064310073852539, 9.227920293807983]
+[0.230257, 0.260484]
+[9.146115183830261, 9.064310073852539, 9.227920293807983, 9.146115183830261, 0.013384152036934438, 0.11568989600191729]
+[0.2453705, 0.230257, 0.260484, 0.2453705, 0.00045683576450000014, 0.021373716674925776]
+Complete
+/usr/bin/time -a  -o tmpScriptClientRunningStatisticsdataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientRunningStatistics.sh
+running_stats_ex.cpp                          100% 1622     1.6KB/s   00:00    
+RunningStatistics.sh                          100%  134     0.1KB/s   00:00    
+outFileRunningStatistics                      100%   20MB   4.0MB/s   00:05    
+running_stats_ex.cpp                          100% 1622     1.6KB/s   00:00    
+RunningStatistics.sh                          100%  134     0.1KB/s   00:00    
+outFileRunningStatistics                      100%   20MB   5.0MB/s   00:04    
+[7.593684196472168, 6.511567831039429]
+[0.34024, 0.27040200000000003]
+[7.052626013755798, 6.511567831039429, 7.593684196472168, 7.052626013755798, 0.5854879141686808, 0.76517182003043]
+[0.305321, 0.27040200000000003, 0.34024, 0.305321, 0.002438673121999997, 0.049382923384506075]
+Complete
+/usr/bin/time -a  -o tmpScriptClientSortdataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientSort.sh
+queue_ex.cpp                                  100% 2127     2.1KB/s   00:00    
+Sort.sh                                       100%  124     0.1KB/s   00:00    
+outFileSort                                   100%    0     0.0KB/s   00:00    
+queue_ex.cpp                                  100% 2127     2.1KB/s   00:00    
+Sort.sh                                       100%  124     0.1KB/s   00:00    
+outFileSort                                   100%    0     0.0KB/s   00:00    
+[6.257209777832031, 6.046406269073486]
+[0.05026, 0.040294]
+[6.151808023452759, 6.046406269073486, 6.257209777832031, 6.151808023452759, 0.022219059652456963, 0.1490605905410849]
+[0.045277, 0.040294, 0.05026, 0.045277, 4.9660577999999956e-05, 0.007047026181305129]
+Complete
+/usr/bin/time -a  -o tmpScriptClientSvmPegasosdataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientSvmPegasos.sh
+svm_pegasos_ex.cpp                            100% 6490     6.3KB/s   00:00    
+SvmPegasos.sh                                 100%  132     0.1KB/s   00:00    
+outFileSvmPegasos                             100%   27KB  27.1KB/s   00:00    
+svm_pegasos_ex.cpp                            100% 6490     6.3KB/s   00:00    
+SvmPegasos.sh                                 100%  132     0.1KB/s   00:00    
+outFileSvmPegasos                             100%   27KB  27.1KB/s   00:00    
+[6.928879737854004, 6.931833744049072]
+[0.050227, 0.060338]
+[6.930356740951538, 6.928879737854004, 6.931833744049072, 6.930356740951538, 4.363076300251123e-06, 0.0020887978121999083]
+[0.0552825, 0.050227, 0.060338, 0.0552825, 5.111616050000002e-05, 0.007149556664577184]
+Complete
+/usr/bin/time -a  -o tmpScriptClientSvmRankdataTransfer.csv -f "%S","%U",%P,%F,%R ./ScriptClientSvmRank.sh
+svm_rank_ex.cpp                               100% 6521     6.4KB/s   00:00    
+SvmRank.sh                                    100%  125     0.1KB/s   00:00    
+outFileSvmRank                                100%  257     0.3KB/s   00:00    
+svm_rank_ex.cpp                               100% 6521     6.4KB/s   00:00    
+SvmRank.sh                                    100%  125     0.1KB/s   00:00    
+outFileSvmRank                                100%  257     0.3KB/s   00:00    
+[3.9203310012817383, 3.4782097339630127]
+[0.04026, 0.050361]
+[3.6992703676223755, 3.4782097339630127, 3.9203310012817383, 3.6992703676223755, 0.097735607507758, 0.3126269462278612]
+[0.045310500000000004, 0.04026, 0.050361, 0.045310500000000004, 5.101510050000006e-05, 0.007142485596765321]
+Complete
+Complete
+raj@raj-Inspi

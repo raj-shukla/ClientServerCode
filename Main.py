@@ -21,7 +21,7 @@ command4 = ' ./' + script
 command =  command1 + command2 + command3 + command4
 print(command)
 
-for index in range(0, 10):
+for index in range(0, 2):
 #{
     start = time.time()
     cpuStart = time.clock()
