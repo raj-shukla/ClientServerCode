@@ -23,7 +23,7 @@ p(D=0 | C=1) = 0.64853
 
 
 Using the approximate Gibbs Sampler algorithm:
-p(A=1 | C=1) = 0.5225
-p(B=1 | C=1) = 0.008
+p(A=1 | C=1) = 0.516
+p(B=1 | C=1) = 0.0065
 p(C=1 | C=1) = 1
-p(D=1 | C=1) = 0.3745
+p(D=1 | C=1) = 0.3555
